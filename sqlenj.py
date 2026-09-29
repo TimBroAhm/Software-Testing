@@ -1,7 +1,7 @@
 import requests
 
 # Target login URL
-url = "http://172.168.10.20:8081/help/loginn.php"
+url = "http://192.168.10.20:8081/help/loginn.php"
 
 # Normal login attempt with valid credentials
 normal_payload = {
