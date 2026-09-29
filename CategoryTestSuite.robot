@@ -5,7 +5,7 @@ Suite Teardown    Close Browser
 
 *** Variables ***
 ${BROWSER}    Chrome
-${LOGIN_URL}    http://localhost/help/login.php
+${LOGIN_URL}    http://localhost/help/loginn.php
 ${CATEGORY_URL}    http://localhost/help/category.php
 ${VALID_USER}    admin
 ${VALID_PASS}    admin123
