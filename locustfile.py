@@ -3,14 +3,14 @@ from locust import HttpUser, TaskSet, task, between
 class UserBehavior(TaskSet):
     def on_start(self):
         """Login once per simulated user."""
-        self.client.post("/help/login.php", {
-            "username": "4969",
-            "password": "epss123"
+        self.client.post("/help/loginn.php", {
+            "username": "Admin",
+            "password": "1234"
         })
 
     @task(2)
     def view_dashboard(self):
-        self.client.get("/help/officer_dashboard.php", name="Officer Dashboard")
+        self.client.get("/help/expert_dashboard.php", name="Expert Dashboard")
 
     @task(1)
     def manage_profile(self):
@@ -18,11 +18,11 @@ class UserBehavior(TaskSet):
 
     @task(1)
     def coordinator_dashboard(self):
-        self.client.get("/help/cordinator_dashbord.php", name="Coordinator Dashboard")
+        self.client.get("/help/manager_dashbord.php", name="Manager Dashboard")
 
     @task(1)
     def manage_service(self):
-        self.client.get("/help/manage_service.php", name="Manage Service")
+        self.client.get("/help/manage_activities.php", name="Manage Activities")
 
     @task(1)
     def manage_employee(self):
@@ -38,7 +38,7 @@ class UserBehavior(TaskSet):
 
     @task(1)
     def manage_report_cord(self):
-        self.client.get("/help/manage_reportcord.php", name="Manage Report Coordinator")
+        self.client.get("/help/manage_reportmanager.php", name="Manage Report Manager")
 
     @task(1)
     def logout(self):
