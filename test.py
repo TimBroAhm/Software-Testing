@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
 
 # Open the login page
-driver.get("http://172.16.250.15:8080/help/login.php")
+driver.get("http://192.168.10.20:8081/help/loginn.php")
 
 # Locate and interact with the username field (adjust class or XPath based on your observation)
 username_field = driver.find_element(By.CLASS_NAME, "navbar-nav")  # Use the correct class name here
