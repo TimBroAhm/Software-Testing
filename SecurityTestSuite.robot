@@ -1,23 +1,23 @@
 *** Settings ***
 Library           SeleniumLibrary
 Library           RequestsLibrary
-Library           ZapLibrary    http://172.16.250.15:8080/help/login.php
+Library           ZapLibrary    http://192.168.10.20:8081/help/loginn.php
 Suite Setup       Initialize Test Environment
 Suite Teardown    Run ZAP Active Scan And Close
 
 *** Variables ***
 ${BROWSER}                Chrome
-${LOGIN_URL}             http://172.16.250.15:8080/help/login.php
+${LOGIN_URL}             http://192.168.10.20:8081/help/loginn.php
 ${SQL_INJECTION_PAYLOAD}  ' OR '1'='1--
-${ZAP_API}               http://172.16.250.15:8080/help/login.php
+${ZAP_API}               http://192.168.10.20:8081/help/loginn.php
 ${EXPECTED_RESPONSE}      Invalid username or Password
 ${ZAP_CONTEXT_NAME}       HelpDeskContext
 ${TARGET}                 http://localhost/help/
 
 *** Keywords ***
 Initialize Test Environment
-    Create Session    helpdesk    ${LOGIN_URL}    proxies=http://localhost:8080
-    Open Browser    ${LOGIN_URL}    ${BROWSER}    options=add_argument("--proxy-server=http://localhost:8080")
+    Create Session    helpdesk    ${LOGIN_URL}    proxies=http://localhost:8081
+    Open Browser    ${LOGIN_URL}    ${BROWSER}    options=add_argument("--proxy-server=http://localhost:8081")
     Maximize Browser Window
 
 Submit SQL Injection Via UI
